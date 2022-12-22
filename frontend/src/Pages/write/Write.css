@@ -1,0 +1,176 @@
+.write
+{
+    width: 97%;
+    min-height: 100vh;
+    margin: auto;
+    padding: 5px;
+    background: rgb(0 0 0 / 24%);
+    border-radius: 30px;
+    transform: translateY(2%);
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    
+}
+
+.writeimg
+{
+    position: relative;
+    width: 40%;
+    height: 270px;
+    transform: translateY(5%);
+    border: 1px solid rgba(255, 255, 255, 0.848);
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px rgba(236, 234, 234, 0.753);
+    object-fit:cover;
+}
+
+
+.writeForm
+{
+    width: 100%;
+    margin-top:2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.writeForm i
+{
+    font-size: 2rem;
+    color: #fff;
+    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.writeForm i:hover
+{
+    box-shadow: none;
+    font-size: 2.5rem;
+    box-shadow: 0px 0px 5px rgb(255, 255, 255);
+}
+
+.titleinput
+{
+    position: relative;
+    top: 20px;
+    text-align: center;
+    width: 190px;
+    height: 55px;
+    background: rgba(0, 0, 0, 0.278);
+    outline-style: none;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 0px 8px rgba(239, 235, 235, 0.516);
+    font-size: 1.3rem;
+    font-family: 'Kaushan Script', cursive;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 5px #fff;
+}
+
+.titleinput::placeholder
+{
+    font-size: 1.3rem;
+    font-family: 'Kaushan Script', cursive;
+    font-weight: 600;
+    margin-top: 7px;
+    color: rgba(255, 255, 255, 0.889);
+    letter-spacing: 2px;
+    text-align: center;
+    text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.733);
+}
+.titleinput:focus
+{
+    outline-style: none;
+}
+
+.para
+{
+    width: 80%;
+    margin-top: 40px;
+}
+
+.para textarea
+{
+    width: 100%;
+    height: 200px;
+    border: none;
+    background: rgba(0, 0, 0, 0.278);
+    outline-style: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px rgba(245, 242, 242, 0.692);
+    font-size: 1.3rem;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+    text-shadow: 0px 0px 3px #fff;
+    padding: 4px;
+}
+.para textarea::placeholder
+{
+    text-align: center;
+    font-size: 1.8rem;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0px 0px 5px #fff;
+}
+
+.submitbtn button
+{
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 15px;
+    color: #fff;
+    background: linear-gradient(to right, #e5c565  , #e5df66 ); 
+    box-shadow: 15px 15px 0px transparent;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Kaushan Script', cursive;
+    font-weight: 600;
+}
+
+@media (max-width: 480px)
+{
+    .write
+    {
+        width: 100%;
+        margin: 2px;
+        transform: translateY(70px);
+    }
+    .writeimg
+    {
+        width: 300px;
+        height: 250px;
+    }
+
+    .writeForm i
+    {
+        font-size: 1.5rem;
+    }
+    .titleinput
+    {
+        font-size: 1rem;
+        width: 150px;
+        height: 40px;
+    }
+    .titleinput::placeholder
+    {
+        font-size: 1rem;
+    }
+    .para
+    {
+        width: 100%;
+        margin: 40px 4px 0px 4px;
+    }
+}

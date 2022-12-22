@@ -1,0 +1,87 @@
+.post
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 450px;
+    margin-top: 10px;
+    height: 500px;
+    background: #1c1b1b21;
+    border-radius: 35px;
+    margin: 10px;
+    box-shadow: 10px 10px 0px transparent;
+    padding: 10px;   
+    
+}
+.post img
+{
+    position: relative;
+    transform: translateY(-15px);
+    width: 400px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.postcat{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  transform: translateY(10px);
+  color: #fff;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.posttitle
+{
+    text-align: center;
+    position: relative;
+    font-family: 'Itim', cursive;
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.981);
+    cursor: pointer;
+}
+
+.postDesc
+{
+    text-align: center;
+    position: relative;
+    transform: translateY(10px);
+    font-family: 'Dancing Script', cursive;
+    color: rgba(255, 255, 255, 0.96);
+    cursor: pointer;
+    font-size: 1.4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    line-height: 24px;
+    font-weight:lighter;
+}
+
+@media (max-width: 480px)
+{
+    .post{
+        width: 360px;
+        height: 400px;
+        margin: 5px;
+    }
+
+    .post img
+    {
+        width: 225px;
+        height: 213px;
+        transform: scaleX(1.40);
+        top: -4px;
+    }
+
+    .postDesc
+    {
+       top: -9px;
+    }
+}

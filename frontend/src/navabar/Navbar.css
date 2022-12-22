@@ -1,0 +1,143 @@
+.navbar
+{
+    width: 80%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+    transform: translateX(15%);
+    position: sticky;
+    top: 0%;
+    border: none;
+    border-bottom-left-radius:15px ;
+    border-bottom-right-radius:15px ;
+    box-shadow: 0px 0px 8px rgb(255,255, 255);
+    z-index: 20;
+}
+
+.left,.right
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+
+.center
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.fa-brands
+{
+   font-size: 25px;
+   margin: 7px;
+   cursor: pointer;
+   transition: transform 0.5s;
+   overflow: visible;
+   color: white;
+}
+.fa-brands:hover
+{
+    transform: scale(1.2);
+}
+
+.fa-facebook:hover
+{
+    color: #3b5998;
+}
+.fa-instagram:hover
+{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.fa-linkedin:hover
+{
+    color: #0A66C2;
+}
+
+ul
+{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Kaushan Script', cursive;
+    font-weight: 600;
+}
+li
+{
+   margin: 10px;
+   cursor: pointer;
+   color: #fff;
+}
+
+.right-part
+{
+    margin: 10px;
+}
+
+.right img
+{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    box-shadow: 0px 0px 7px rgba(230, 222, 222, 0.905);
+    border: 1px solid white;
+}
+
+.right span
+{
+    font-family: 'Kaushan Script', cursive;
+    font-weight: 600;
+    cursor: pointer;
+    color: #fff;
+}
+
+@media (max-width: 480px)
+{
+   .navbar
+   {
+    width: 94%;    
+    position: absolute;
+    left: -147px;
+   }
+   .fa-brands
+   {
+    font-size: 17px;
+   }
+   li
+   {
+    margin: 4px;
+    font-size: 12px;
+   }
+   
+   .right
+   {
+      margin-left: -20px;
+   }
+
+   .right-part
+   {
+    margin: -5px;
+   }
+   .right span
+   {
+    font-size: 12px;
+   }
+   .right img
+   {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left: 20px;
+   }
+}
