@@ -7,7 +7,7 @@ import {motion} from 'framer-motion'
 
 function Navbar() {
   const {user,dispatch}=useContext(Context);
-  const PF = "https://adventureverse-backend.onrender.com/Images/"
+  const PF = "https://adventureverse-ni3v.onrender.com/Images/"
   const handlelogout=()=>{
     dispatch({type:"LOGOUT"})
   }

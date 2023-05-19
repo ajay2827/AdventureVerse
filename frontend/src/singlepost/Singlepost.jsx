@@ -12,7 +12,7 @@ function Singlepost() {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const [post, setPost] = useState({});
-  const PF = "https://adventureverse-backend.onrender.com/Images/";
+  const PF = "https://adventureverse-ni3v.onrender.com/Images/";
   const { user } = useContext(Context);
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
@@ -20,7 +20,7 @@ function Singlepost() {
 
   useEffect(() => {
     const fetchpost = async () => {
-      const res = await axios.get("https://adventureverse-backend.onrender.com/api/posts/" + path);
+      const res = await axios.get("https://adventureverse-ni3v.onrender.com/api/posts/" + path);
       setPost(res.data);
       setTitle(res.data.title);
       setDesc(res.data.desc);
@@ -31,7 +31,7 @@ function Singlepost() {
 
   const handledelete = async () => {
     try {
-      await axios.delete("http://localhost:5000/api/posts/" + post._id, {
+      await axios.delete("https://adventureverse-ni3v.onrender.com/api/posts/" + post._id, {
         data: { username: user.username },
       });
       window.location.replace("/");
@@ -43,7 +43,7 @@ function Singlepost() {
 
   const handleupdate = async () => {
     try {
-      await axios.put("http://localhost:5000/api/posts/" + post._id, {
+      await axios.put("https://adventureverse-ni3v.onrender.com/api/posts/" + post._id, {
         username: user.username,
         desc,
         title,

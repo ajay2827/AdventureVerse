@@ -14,7 +14,7 @@ function Register() {
     e.preventDefault();
     setError(false);
     try{   
-      const res=await axios.post("https://adventureverse-backend.onrender.com/api/auth/register",{
+      const res=await axios.post("https://adventureverse-ni3v.onrender.com/api/auth/register",{
         username,
         email,
         password,

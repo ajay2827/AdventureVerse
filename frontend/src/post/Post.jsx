@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import {motion} from 'framer-motion'
 
 function Post({post}) {
-  const PF="https://adventureverse-backend.onrender.com/Images/"
+  const PF="https://adventureverse-ni3v.onrender.com/Images/"
   return (
     <motion.div className='post'
     initial={{ opacity: 0 }}

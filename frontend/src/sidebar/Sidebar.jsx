@@ -6,14 +6,7 @@ import {motion} from 'framer-motion'
 import './Sidebar.css'
 
 function Sidebar() {
-  const[cats,setCats]=useState([]);
-  useEffect(()=>{
-    const fetchcat=async()=>{
-      const res=await axios.get('https://adventureverse-backend.onrender.com/api/categorys');
-      setCats(res.data);
-    }
-    fetchcat();
-  },[])
+  
   return (
     <motion.div className='sidebar'
     initial={{ opacity: 0 }}
@@ -30,16 +23,7 @@ function Sidebar() {
             <h1>Ajay Singh</h1>
             <p>I'm a Web Developer and <br/> I like to learn coding</p>
             </div>
-            <div className="categories">
-              <h2>CATEGORIES</h2>
-              <ul className="categorieslist">
-                {
-                  cats.map((c)=>(
-                    <li className="categorieslistitem" key={c._id}> {c.name}</li>               
-                  ))
-                }
-              </ul>
-            </div>
+  
         </div>
         
       </div>
