@@ -6,10 +6,10 @@ import Register from './Pages/register/Register';
 import Setting from './Pages/setting/Setting';
 import Single from './Pages/Single';
 import Write from './Pages/write/Write';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {  Routes, Route } from "react-router-dom";
 import { useContext } from 'react';
 import { Context } from './context/Context';
-import { motion, AnimatePresence } from "framer-motion"
+import {  AnimatePresence } from "framer-motion"
 import { useLocation } from 'react-router-dom';
 import Sidebar from './sidebar/Sidebar';
 

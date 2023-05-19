@@ -1,7 +1,6 @@
 import React from 'react'
 import axios from "axios";
 import '../Login/Login.css'
-import { Link } from "react-router-dom";
 import { useRef } from 'react';
 import { useContext } from 'react';
 import { Context } from '../../context/Context';
@@ -17,7 +16,7 @@ function Login() {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const res = await axios.post("https://adventureverse-backend.onrender.com/api/auth/login", {
         username: userref.current.value,
         password: passref.current.value,
       });
@@ -32,7 +31,7 @@ function Login() {
     initial={{opacity:0}}
     animate={{opacity:1}}
     exit={{opacity:0}}
-    transition={{duration:0.5,type: 'tween',
+    transition={{duration:0.2,type: 'tween',
     ease: 'easeIn', }}  
     >
       <div className="box">

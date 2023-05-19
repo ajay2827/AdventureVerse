@@ -12,7 +12,7 @@ function Singlepost() {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const [post, setPost] = useState({});
-  const PF = "http://localhost:5000/Images/";
+  const PF = "https://adventureverse-backend.onrender.com/Images/";
   const { user } = useContext(Context);
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
@@ -20,7 +20,7 @@ function Singlepost() {
 
   useEffect(() => {
     const fetchpost = async () => {
-      const res = await axios.get("http://localhost:5000/api/posts/" + path);
+      const res = await axios.get("https://adventureverse-backend.onrender.com/api/posts/" + path);
       setPost(res.data);
       setTitle(res.data.title);
       setDesc(res.data.desc);
@@ -49,6 +49,7 @@ function Singlepost() {
         title,
       });
       setUpdate(false);
+      window.location.replace("/");
     } catch (err) {
       console.log(err);
     }
@@ -58,7 +59,7 @@ function Singlepost() {
     initial={{opacity:0}}
     animate={{opacity:1}}
     exit={{opacity:0}}
-    transition={{duration:0.5,type: 'tween',
+    transition={{duration:0.2,type: 'tween',
     ease: 'easeIn', }} 
     >
       <div className="singletitle">

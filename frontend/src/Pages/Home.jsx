@@ -13,7 +13,7 @@ function Home() {
    const {search}=useLocation();
    useEffect(()=>{
         const fetchpost= async()=>{
-        const res= await axios.get("http://localhost:5000/api/posts"+search);
+        const res= await axios.get("https://adventureverse-backend.onrender.com/api/posts"+search);
         const result=await res.data;
         setPosts(result);
        }

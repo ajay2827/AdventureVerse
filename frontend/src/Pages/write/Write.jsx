@@ -13,8 +13,7 @@ function Write() {
   const{user}=useContext(Context);
 
   const handlesubmit=async(e)=>{
-    e.preventDefault()
-    console.log("jhjhj");
+    e.preventDefault();
     const newPost={
         username:user.username,
         title,
@@ -29,7 +28,7 @@ function Write() {
       newPost.photo=filename;
       try
       {
-        await axios.post('http://localhost:5000/api/upload',data)
+        await axios.post('https://adventureverse-backend.onrender.com/api/upload',data)
       }
       catch(err)
       { 
@@ -38,7 +37,7 @@ function Write() {
     }
 
        try{
-          const res=await axios.post("http://localhost:5000/api/posts",newPost);
+          const res=await axios.post("https://adventureverse-backend.onrender.com/api/posts",newPost);
           window.location.replace("/post/" + res.data._id);
        }
        catch(err)
@@ -51,7 +50,7 @@ function Write() {
     initial={{opacity:0}}
     animate={{opacity:1}}
     exit={{opacity:0}}
-    transition={{duration:0.5,type: 'tween',
+    transition={{duration:0.2,type: 'tween',
     ease: 'easeIn', }} >
 
       

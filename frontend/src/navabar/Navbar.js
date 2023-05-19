@@ -1,6 +1,5 @@
 import '../navabar/Navbar.css'
 import React from 'react'
-import {FiSearch} from 'react-icons/fi'
 import {Link } from "react-router-dom";
 import { useContext } from 'react';
 import { Context } from '../context/Context';
@@ -8,7 +7,7 @@ import {motion} from 'framer-motion'
 
 function Navbar() {
   const {user,dispatch}=useContext(Context);
-  const PF = "http://localhost:5000/Images/"
+  const PF = "https://adventureverse-backend.onrender.com/Images/"
   const handlelogout=()=>{
     dispatch({type:"LOGOUT"})
   }
@@ -20,9 +19,9 @@ function Navbar() {
     ease: 'easeInOut',delay:0.5}}
     >
       <div className="left">
-      <i className="fa-brands fa-facebook"></i>
-      <i className="fa-brands fa-instagram"></i>
-      <i className="fa-brands fa-linkedin"></i>
+     <a href="https://m.facebook.com/100024528827992"><i className="fa-brands fa-facebook"></i></a> 
+      <a href="https://www.instagram.com/ajay.singh0710"><i className="fa-brands fa-instagram"></i></a>
+     <a href="www.linkedin.com/in/ajay-singh27"> <i className="fa-brands fa-linkedin"></i></a>
       </div>
       <div className="center">
        <ul>

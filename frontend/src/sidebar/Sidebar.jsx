@@ -2,7 +2,6 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react'
 import axios from 'axios';
-import { Link, useLocation } from 'react-router-dom'
 import {motion} from 'framer-motion'
 import './Sidebar.css'
 
@@ -10,7 +9,7 @@ function Sidebar() {
   const[cats,setCats]=useState([]);
   useEffect(()=>{
     const fetchcat=async()=>{
-      const res=await axios.get('http://localhost:5000/api/categorys');
+      const res=await axios.get('https://adventureverse-backend.onrender.com/api/categorys');
       setCats(res.data);
     }
     fetchcat();

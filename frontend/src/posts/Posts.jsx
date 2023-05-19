@@ -1,8 +1,6 @@
 import React from 'react'
 import './Posts.css'
 import Post from '../post/Post'
-import { useEffect } from 'react'
-import {motion} from 'framer-motion'
 
 function Posts({posts}) {
   return (

@@ -2,15 +2,16 @@ const express=require('express');
 const app= express();
 const dotenv=require('dotenv');
 const mongoose = require('mongoose');
-const authrouter=require('../server/routes/auth');
-const userrouter=require('../server/routes/users');
-const postrouter=require('../server/routes/posts');
-const categoryrouter=require('../server/routes/categorys');
+const authRouter=require('./routes/authRouter');
+const userRouter=require('./routes/usersRouter');
+const postRouter=require('./routes/postRouter');
+// const categoryrouter=require('./controllers/categorysController');
 const multer = require('multer');
 const cors=require('cors');
-const { json } = require('express');
 const path = require('path');
-const port=5000;
+const connectDB=require('./db/connect')
+const notfoundMiddleware=require('./middleware/notFound')
+const errorHandlerMiddleware=require('./middleware/error-handler')
 
 dotenv.config();
 app.use(express.json());
@@ -18,23 +19,20 @@ app.use(express.json());
 // Set the strictQuery option to false
 mongoose.set('strictQuery', false);
 
-mongoose.connect(process.env.MONGO_URL,{
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(console.log("Connected"))
-.catch((err)=>
-    console.log(err)
-);
+// router
+app.use('/api/auth',authRouter);
+app.use('/api/users',userRouter);
+app.use('/api/posts',postRouter);
+// app.use('/api/categorys',categoryrouter);
+
 
 // middleware
+app.use(errorHandlerMiddleware)
+app.use(notfoundMiddleware)
 app.use(cors())
 app.use('/Images',express.static(path.join(__dirname,"Images")))
 
-// router
-app.use('/api/auth',authrouter);
-app.use('/api/users',userrouter);
-app.use('/api/posts',postrouter);
-app.use('/api/categorys',categoryrouter);
+
 
 // multer 
 var storage = multer.diskStorage({
@@ -56,6 +54,18 @@ app.post('/api/upload', upload.single('file') , (req, res) =>{
     }
 });
 
-app.listen(port,()=>{
-    console.log(`Sever is starting at port number ${port} ...`);
-})
+
+// running server
+const port = process.env.PORT || 3000;
+
+const start = async () => {
+  try {
+    // connectDB
+    await connectDB(process.env.MONGO_URL);
+    app.listen(port, () => console.log(`Server is listening port ${port}...`));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+start()

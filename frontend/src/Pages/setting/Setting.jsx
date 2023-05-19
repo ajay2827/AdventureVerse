@@ -13,8 +13,7 @@ function Setting() {
   const[username,setUsername]=useState("");
   const[email,setEmail]=useState("");
   const[password,setPassword]=useState("");
-  const [success, setSuccess] = useState(false);
-  const PF = "http://localhost:5000/Images/"
+  const PF = "https://adventureverse-backend.onrender.com/Images/"
 
   const handlesubmit=async(e)=>{
     e.preventDefault();
@@ -34,7 +33,7 @@ function Setting() {
       updateUser.profilepic=filename;
       try
       {
-        await axios.post('http://localhost:5000/api/upload',data)
+        await axios.post('https://adventureverse-backend.onrender.com/api/upload',data)
       }
       catch(err)
       { 
@@ -43,8 +42,7 @@ function Setting() {
     }
 
        try{
-          const res=await axios.put("http://localhost:5000/api/users/"+user._id,updateUser);
-          setSuccess(true);
+          const res=await axios.put("https://adventureverse-backend.onrender.com/api/users/"+user._id,updateUser);
           dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
        }
        catch(err)
@@ -71,7 +69,7 @@ function Setting() {
     initial={{opacity:0}}
     animate={{opacity:1}}
     exit={{opacity:0}}
-    transition={{duration:0.5,type: 'tween',
+    transition={{duration:0.2,type: 'tween',
     ease: 'easeIn', }} 
     >
       <div className="settinguser">

@@ -1,6 +1,5 @@
 import React from 'react'
 import '../register/Register.css'
-import { Link } from "react-router-dom";
 import { useState } from 'react';
 import axios from 'axios';
 import panda2 from '../register/panda2.png'
@@ -15,7 +14,7 @@ function Register() {
     e.preventDefault();
     setError(false);
     try{   
-      const res=await axios.post("http://localhost:5000/api/auth/register",{
+      const res=await axios.post("https://adventureverse-backend.onrender.com/api/auth/register",{
         username,
         email,
         password,
@@ -33,7 +32,7 @@ function Register() {
     initial={{opacity:0}}
     animate={{opacity:1}}
     exit={{opacity:0}}
-    transition={{duration:0.5,type: 'tween',
+    transition={{duration:0.2,type: 'tween',
     ease: 'easeIn', }}>      
       <div className="box">
       <div className="innerregister">
