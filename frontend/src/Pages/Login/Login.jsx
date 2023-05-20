@@ -17,7 +17,7 @@ function Login() {
     dispatch({ type: "LOGIN_START" });
     try {
       const res = await axios.post("https://adventureverse-ni3v.onrender.com/api/auth/login", {
-        username: userref.current.value,
+        email: userref.current.value,
         password: passref.current.value,
       });
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
