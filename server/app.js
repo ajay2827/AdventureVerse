@@ -8,6 +8,7 @@ const postRouter=require('./routes/postRouter');
 // const categoryrouter=require('./controllers/categorysController');
 const multer = require('multer');
 const cors=require('cors');
+app.use(cors())
 const path = require('path');
 const connectDB=require('./db/connect')
 const notfoundMiddleware=require('./middleware/notFound')
@@ -29,7 +30,6 @@ app.use('/api/posts',postRouter);
 // middleware
 app.use(errorHandlerMiddleware)
 app.use(notfoundMiddleware)
-app.use(cors())
 app.use('/Images',express.static(path.join(__dirname,"Images")))
 
 
